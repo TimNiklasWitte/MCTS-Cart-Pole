@@ -3,9 +3,9 @@
 by Tim Niklas Witte
 
 An implementation of the Monte Carlo Tree Search (MCTS) algorithm for the [Cart Pole environment](https://www.gymlibrary.dev/environments/classic_control/cart_pole/).
-There are the following two variants:
-`MCTS_ValueOnly` which only considers the value of a state which is being rollout i.e. ignores intermediate rewards.
-`MCTS_Reward` which considers intermediate rewards.
+There are the following two variants of it:
+- `MCTS_ValueOnly` which only considers the value of a state which is being rollout i.e. ignores intermediate rewards.
+- `MCTS_Reward` which considers intermediate rewards.
 
 # Usage
 
