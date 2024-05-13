@@ -1,5 +1,6 @@
 import numpy as np
 import copy
+import gym
 
 c = 2
 
@@ -115,7 +116,7 @@ class MCTS_Reward:
                       
             action = node.env.action_space.sample()
 
-            next_state, reward, done , _, _ = env.step(action)
+            next_state, reward, done, _, _  = env.step(action)
 
             reward_list.append(reward)
 
@@ -137,11 +138,11 @@ class MCTS_Reward:
             
             current.n += 1
             
+            G = current.reward + self.gamma * G
+
             current.w = current.w + G
             current.q = current.w / current.n
 
-            G = current.reward + self.gamma * G
-            
             current = current.parent
 
          

@@ -1,4 +1,4 @@
-import gym
+import gymnasium
 import numpy as np
 import tqdm
 import argparse
@@ -15,7 +15,7 @@ filterwarnings(action='ignore', category=DeprecationWarning, message='`np.bool8`
 
 def process_runMCTS(num_procs, process_id, seed, mcts_mode, num_mcts_iterations, num_steps_shm):
     
-    env = gym.make("CartPole-v1")
+    env = gymnasium.make("CartPole-v1")
     env.reset(seed=seed)
 
     num_steps_mem = np.ndarray(shape=(num_procs, ), dtype=np.uint16, buffer=num_steps_shm.buf)
